@@ -2,9 +2,15 @@ import Hello from './hello.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import {Router, Route, hashHistory} from 'react-router';
+import Article from './article.jsx';
+
+const router = <Router history={hashHistory}>
+  <Route path="/article" component={Article}/>
+</Router>;
 
 ReactDOM.render(
-  <Hello />,
+  router,
   document.getElementById("content")
 );
 
