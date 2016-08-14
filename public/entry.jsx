@@ -1,4 +1,3 @@
-import Hello from './hello.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
@@ -6,6 +5,7 @@ import {Router, Route, IndexRedirect, hashHistory} from 'react-router';
 import Article from './article.jsx';
 import Articles from './articles.jsx';
 import Layout from './layout.jsx';
+require('bootstrap-webpack');
 
 const router = <Router history={hashHistory}>
   <Route path="/" component={Layout}>

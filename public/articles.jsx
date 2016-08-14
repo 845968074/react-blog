@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import request from 'superagent';
+import {Grid, Row, Col} from 'react-bootstrap';
 
 export default class Articles extends Component {
   constructor(props) {
@@ -20,15 +21,26 @@ export default class Articles extends Component {
   }
 
   render() {
-    return <div>
-      {
-        this.state.articles.map(article =>
-          <div key={article._id}>
-            <div>{article.title}</div>
-            <div>{article.content}</div>
+    return <Grid>
+      <Row>
+        <Col xs={12}>
+          <h1>All Articles</h1>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={12}>
+          <div>
+            {
+              this.state.articles.map(article =>
+                <div key={article._id}>
+                  <h2>{article.title}</h2>
+                  <div>{article.content}</div>
+                </div>
+              )
+            }
           </div>
-        )
-      }
-    </div>;
+        </Col>
+      </Row>
+    </Grid>;
   }
 }
