@@ -17,4 +17,8 @@ router.post('/article', (req, res) => {
   }
 });
 
+router.get('/articles', (req, res) => {
+  res.json(articles);
+});
+
 export default router;

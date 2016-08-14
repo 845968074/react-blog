@@ -4,8 +4,10 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import {Router, Route, hashHistory} from 'react-router';
 import Article from './article.jsx';
+import Articles from './articles.jsx';
 
 const router = <Router history={hashHistory}>
+  <Route path="/articles" component={Articles}/>
   <Route path="/article" component={Article}/>
 </Router>;
 
