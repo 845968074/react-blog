@@ -23,7 +23,7 @@ export default class Articles extends Component {
     return <div>
       {
         this.state.articles.map(article =>
-          <div key={article.title}>
+          <div key={article._id}>
             <div>{article.title}</div>
             <div>{article.content}</div>
           </div>

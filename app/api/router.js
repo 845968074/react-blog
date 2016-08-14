@@ -1,24 +1,14 @@
 'use strict';
 import express from 'express';
-import _ from 'lodash';
+import saveArticle from './save-article';
+import getArticles from './get-articles';
 
 const router = express.Router();
 
 const articles = [];
 
-router.post('/article', (req, res) => {
-  const article = req.body;
-  if (_.isEmpty(article)) {
-    res.sendStatus(400);
-  } else {
-    articles.push(article);
-    res.sendStatus(201);
-    console.log(JSON.stringify(articles));
-  }
-});
+router.post('/article', saveArticle);
 
-router.get('/articles', (req, res) => {
-  res.json(articles);
-});
+router.get('/articles', getArticles);
 
 export default router;
