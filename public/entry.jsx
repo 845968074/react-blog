@@ -2,13 +2,17 @@ import Hello from './hello.jsx';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import {Router, Route, hashHistory} from 'react-router';
+import {Router, Route, IndexRedirect, hashHistory} from 'react-router';
 import Article from './article.jsx';
 import Articles from './articles.jsx';
+import Layout from './layout.jsx';
 
 const router = <Router history={hashHistory}>
-  <Route path="/articles" component={Articles}/>
-  <Route path="/article" component={Article}/>
+  <Route path="/" component={Layout}>
+    <IndexRedirect to="/articles"/>
+    <Route path="/articles" component={Articles}/>
+    <Route path="/article" component={Article}/>
+  </Route>
 </Router>;
 
 ReactDOM.render(
