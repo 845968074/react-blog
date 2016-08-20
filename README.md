@@ -15,8 +15,17 @@ A demo project, uses following techniques.
 
 ```
 npm install -g babel-cli
+npm install -g eslint
+npm install -g eslint-config-twa-camp-2016
 npm install
 npm start
 ```
 
 Then visit <http://localhost:3000>
+
+Run eslint
+----------
+
+```
+npm run lint
+```
